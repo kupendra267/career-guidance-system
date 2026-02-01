@@ -1,0 +1,30 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<div class="card wide">
+<h1>Admin Dashboard</h1>
+
+<canvas id="chart"></canvas>
+
+<script>
+const labels=[],values=[];
+{% for r in chart_data %}
+labels.push("{{ r[0] }}");
+values.push({{ r[1] }});
+{% endfor %}
+
+new Chart(document.getElementById("chart"),{
+type:"pie",
+data:{labels:labels,datasets:[{data:values}]}
+});
+</script>
+
+<table>
+<tr><th>ID</th><th>User</th><th>Domain</th><th>Score</th><th>Career</th></tr>
+{% for r in table_data %}
+<tr>{% for c in r %}<td>{{ c }}</td>{% endfor %}</tr>
+{% endfor %}
+</table>
+
+<a href="/logout">Logout</a>
+</div>

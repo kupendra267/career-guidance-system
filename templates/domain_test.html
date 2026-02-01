@@ -1,0 +1,12 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<div class="card wide">
+<form method="post" action="/domain-result">
+{% for q in questions %}
+<p><b>{{ loop.index }}. {{ q[0] }}</b></p>
+<input type="radio" name="q{{ loop.index }}" value="a" required> {{ q[2][0] }}<br>
+<input type="radio" name="q{{ loop.index }}" value="b"> {{ q[2][1] }}<br>
+<input type="radio" name="q{{ loop.index }}" value="c"> {{ q[2][2] }}<br><br>
+{% endfor %}
+<button>Submit Test</button>
+</form>
+</div>

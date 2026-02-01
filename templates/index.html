@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Career Assessment</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<div class="wrapper">
+
+    <div class="left">
+        <h1>Career Assessment</h1>
+        <p>
+            Provide your academic scores and interests.
+            Our AI model will analyze and recommend the
+            most suitable career path for you.
+        </p>
+    </div>
+
+    <div class="right">
+        <div class="card">
+            <h2>Assessment Form</h2>
+            <p>Fill all fields carefully</p>
+
+            <form action="/predict" method="post">
+                <input type="number" name="math" placeholder="Math Score (0–100)" required>
+                <input type="number" name="coding" placeholder="Coding Interest (1 = Yes, 0 = No)" required>
+                <input type="number" name="aptitude" placeholder="Aptitude Score (0–100)" required>
+
+                <button type="submit">Analyze Career</button>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

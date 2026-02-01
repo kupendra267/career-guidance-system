@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Test</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<div class="card wide">
+<form method="post" action="/result">
+
+<h1>Aptitude Test</h1>
+
+<!-- QUESTION 1 -->
+<p><b>1. Python is a?</b></p>
+<label><input type="radio" name="q1" value="b" required> Programming Language</label><br>
+<label><input type="radio" name="q1" value="a"> Snake</label><br><br>
+
+<!-- QUESTION 2 -->
+<p><b>2. HTML is used for?</b></p>
+<label><input type="radio" name="q2" value="a" required> Creating Web Pages</label><br>
+<label><input type="radio" name="q2" value="b"> Managing Databases</label><br><br>
+
+<!-- QUESTION 3 -->
+<p><b>3. CPU stands for?</b></p>
+<label><input type="radio" name="q3" value="c" required> Central Processing Unit</label><br>
+<label><input type="radio" name="q3" value="a"> Central Program Unit</label><br>
+
+<hr>
+
+<h1>Interest</h1>
+
+<p><b>4. Do you like coding?</b></p>
+<label><input type="radio" name="i1" value="yes" required> Yes</label>
+<label><input type="radio" name="i1" value="no"> No</label><br><br>
+
+<p><b>5. Interested in problem solving?</b></p>
+<label><input type="radio" name="i2" value="yes" required> Yes</label>
+<label><input type="radio" name="i2" value="no"> No</label><br><br>
+
+<p><b>6. Enjoy learning new technology?</b></p>
+<label><input type="radio" name="i3" value="yes" required> Yes</label>
+<label><input type="radio" name="i3" value="no"> No</label><br>
+
+<hr>
+
+<h1>Personality (Rate 1–5)</h1>
+
+<p>7. Confidence</p>
+<input type="number" name="p1" min="1" max="5" required>
+
+<p>8. Communication</p>
+<input type="number" name="p2" min="1" max="5" required>
+
+<p>9. Consistency</p>
+<input type="number" name="p3" min="1" max="5" required>
+
+<br><br>
+<button type="submit">Submit Test</button>
+
+</form>
+</div>
+
+</body>
+</html>
